@@ -8,7 +8,7 @@ Route::group([
     'middleware' => 'api',
     'prefix' => 'YKSecurity'
 ], function ($router) {
-
+    Route::get('listaTallasFr', [TallaController::class, 'getTalla']);
     Route::post('login', [AuthController::class, 'login']);
     Route::post('logout', [AuthController::class, 'logout']);
     Route::post('refresh', [AuthController::class, 'refresh']);
