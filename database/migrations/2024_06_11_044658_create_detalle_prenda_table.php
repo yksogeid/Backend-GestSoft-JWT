@@ -15,12 +15,16 @@ return new class extends Migration
             $table->id('idDetallePrenda');
             $table->unsignedBigInteger('idPersona');
             $table->string('nombrePrenda');
-            $table->unsignedBigInteger('idGenero'); // Añadir la columna de clave foránea
+            $table->unsignedBigInteger('idGenero');
+            $table->unsignedBigInteger('idTalla'); // Nueva columna para talla
+            $table->unsignedBigInteger('idColor'); // Nueva columna para color
             $table->timestamps();
-            // Definir la clave foránea
+            
+            // Definir las claves foráneas
             $table->foreign('idGenero')->references('idGenero')->on('generos_gen')->onDelete('cascade');
             $table->foreign('idPersona')->references('idPersona')->on('persona')->onDelete('cascade');
-        
+            $table->foreign('idTalla')->references('idTalla')->on('talla')->onDelete('cascade');
+            $table->foreign('idColor')->references('idColor')->on('color')->onDelete('cascade');
         });
     }
 
