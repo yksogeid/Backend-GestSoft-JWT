@@ -27,6 +27,8 @@ Route::group([
         Route::post('register-talla', [TallaController::class, 'registrarTalla']);
         Route::post('register-color', [ColorController::class, 'registrarColor']);
         Route::get('listaProductos', [ProductoController::class, 'getProducto']);
+        Route::post('register-product', [ProductoController::class, 'newProducto']);
+
 
     });
 });
