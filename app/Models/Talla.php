@@ -9,6 +9,7 @@ class Talla extends Model
 {
     use HasFactory;
     protected $table = "talla";
+    protected $primaryKey = 'idTalla';
 
     // recibe atributos para ser asignados en masa.
     protected $fillable = [

@@ -11,6 +11,10 @@ use App\Models\Talla;
 
 class DetallePrendaController extends Controller
 {
+    function getDetalleSolicitud(){
+        $data = DetallePrenda::with(['persona', 'genero', 'talla', 'color'])->get();
+        return response()->json($data);
+    }
     public function newInteres(Request $request)
     {
         // Validar los datos de entrada
@@ -40,7 +44,7 @@ class DetallePrendaController extends Controller
         );
     
         // Obtener el idPersona
-        $idPersona = $persona->id;
+        $idPersona = $persona->idPersona;
     
         // Verificar si se obtuvo correctamente el idPersona
         if ($idPersona === null) {

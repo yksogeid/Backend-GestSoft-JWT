@@ -20,6 +20,7 @@ Route::group([
 
     // Rutas protegidas por JWT
     Route::group(['middleware' => ['jwt.verify']], function () {
+        Route::get('solicitudes', [DetallePrendaController::class, 'getDetalleSolicitud']);
         Route::get('listaTallas', [TallaController::class, 'getTalla']);
         Route::post('register-talla', [TallaController::class, 'registrarTalla']);
     });

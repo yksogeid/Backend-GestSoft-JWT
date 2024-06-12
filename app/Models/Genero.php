@@ -9,4 +9,6 @@ class Genero extends Model
 {
     use HasFactory;
     protected $table = "generos_gen";
+    protected $primaryKey = 'idGenero';
+
 }
